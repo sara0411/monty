@@ -4,15 +4,15 @@
  * mod - computes the modulus of the second top element of the stack
  *          with the top element of the stack.
  * @stack: pointer to the top of the stack
- * @cpt: line counter of the code
+ * @line_number: line number of the opcode
  */
-void mod(stack_t **stack, unsigned int cpt)
+void mod(stack_t **stack, unsigned int line_number)
 {
 	int a, b;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't mod, stack too short\n", cpt);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -21,10 +21,10 @@ void mod(stack_t **stack, unsigned int cpt)
 
 	if (a == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", cpt);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	(*stack)->next->n = b % a;
-	pop(stack, cpt);
+	op_pop(stack, line_number);
 }

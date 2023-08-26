@@ -3,17 +3,17 @@
 /**
  * pall - prints all values on the stack
  * @stack: pointer to the top of the stack
- * @cpt: line counter of the code
+ * @line_number: line number of the opcode
  */
-void pall(stack_t **stack, unsigned int cpt)
+void op_pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
+	stack_t *copy = *stack;
 
-	while (tmp != NULL)
+	while (copy != NULL)
 	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
-		(void)cpt;
+		printf("%d\n", copy->n);
+		copy = copy->next;
+		(void)line_number;
 	}
 
 }

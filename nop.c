@@ -3,10 +3,10 @@
 /**
  * nop - does nothing
  * @stack: pointer to the top of the stack
- * @cpt: line number of the opcode
+ * @line_number: line number of the opcode
  **/
-void nop(stack_t **stack, unsigned int cpt)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-	(void)cpt;
+	(void)line_number;
 }

@@ -44,36 +44,36 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction - code and its function
- * @code: the code
- * @f: function to handle the code
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
  *
- * Description: code and its function
+ * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
-typedef struct instruction
+typedef struct instruction_s
 {
-	char *code;
-	void (*f)(stack_t **stack, unsigned int cpt);
-} instruction;
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
 
 /* Function prototypes */
 void execute_file(stack_t **stack);
-void execute_opcode(char *code, stack_t **stack, unsigned int cpt);
+void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 
-void push_func(stack_t **stack, unsigned int cpt);
-void pall(stack_t **stack, unsigned int cpt);
-void pint(stack_t **stack, unsigned int cpt);
-void pop(stack_t **stack, unsigned int cpt);
-void swap(stack_t **stack, unsigned int cpt);
-void add(stack_t **stack, unsigned int cpt);
-void nop(stack_t **stack, unsigned int cpt);
-void sub(stack_t **stack, unsigned int cpt);
-void monty_div(stack_t **stack, unsigned int cpt);
-void mul(stack_t **stack, unsigned int cpt);
-void mod(stack_t **stack, unsigned int cpt);
-void pchar(stack_t **stack, unsigned int cpt);
-void pstr(stack_t **stack, unsigned int cpt);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 /* Stack helper functions */
 stack_t *add_node(stack_t **stack, const int n);

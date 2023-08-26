@@ -3,18 +3,18 @@
 /**
  * add - adds the top two elements of the stack
  * @stack: pointer to the top of the stack
- * @cpt: line counter of the code
+ * @line_number: line number of the opcode
  **/
-void add(stack_t **stack, unsigned int cpt)
+void op_add(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", cpt);
-		free(global.line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		free(glob.line);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
 	(*stack)->next->n += (*stack)->n;
-	pop(stack, cpt);
+	op_pop(stack, line_number);
 }
