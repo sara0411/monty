@@ -54,7 +54,7 @@ void err(int err_cd, ...)
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void err2(int error_code, ...)
+void err2(int err_cd, ...)
 {
 	va_list arg;
 	char *op;

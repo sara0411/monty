@@ -44,6 +44,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 	printf("\n");
+	(void)line_number;
 }
 
 /**
@@ -67,6 +68,7 @@ void rotl(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	(*stack)->prev->next = NULL;
 	(*stack)->prev = NULL;
+	 (void)line_number;
 }
 
 
@@ -92,4 +94,5 @@ void rotr(stack_t **stack, unsigned int line_number)
 	tmp->prev = NULL;
 	(*stack)->prev = tmp;
 	(*stack) = tmp;
+	 (void)line_number;
 }
